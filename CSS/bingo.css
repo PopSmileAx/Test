@@ -6,7 +6,7 @@
   
 }
 
-
+/* ビンゴ表示エリア */
 .BingoTable
 { 
 	border-collapse: collapse;
@@ -54,11 +54,18 @@
   background-color: #ffffff
 }
 
+/* ダウンロードボタン */
 .dlButton
 {
   display: none;
 }
+.dlArea
+{
+  text-align: center;
+  margin-top: 20px;
+}
 
+/* 設定エリア */
 .ButtonArea
 {
   table-layout: fixed;
@@ -95,8 +102,11 @@ label{
 .check_box{
   display: none;
 }
-.check_box:checked + .label {
-  background-color: #ffa500;
+.check_box:checked + label {
+  background-color: #6af;
+}
+.radiobutton:checked + label {
+  background-color: #6af;
 }
 
 .HeadArea
@@ -104,12 +114,8 @@ label{
   margin-top: 10px;
   text-align: center;
 }
-.dlArea
-{
-  text-align: center;
-  margin-top: 20px;
-}
 
+/* 説明エリア */
 .AboutArea
 {
   width: 80%;
