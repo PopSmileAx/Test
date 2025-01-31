@@ -7,3 +7,6 @@
 	<script src="https://popsmileax.github.io/Test/Bingo.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://popsmileax.github.io/Test/CSS/bingo.css">
+
+
+    let items = data.split(",").map(item => item.split(":"));
