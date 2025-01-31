@@ -82,6 +82,10 @@
   line-height: 2;
 }
 
+.radiobutton{
+  display: none;
+}
+
 label{
   cursor: pointer;
   padding: 0px 15px;

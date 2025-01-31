@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>ポップンランダムお題ビンゴ</title>
-	<script src="/Bingo.js"></script>
+	<script src="https://popsmileax.github.io/Test/Bingo.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="/CSS/bingo.css">
+	<link rel="stylesheet" type="text/css" href="https://popsmileax.github.io/Test/CSS/bingo.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
 </head>
 
@@ -43,9 +43,10 @@
 			<tr>
 				<td class="ButtonHeader">曲名／<br>ジャンル</td>
 				<td class="ButtonBody">
-					<input type="checkbox" class="check_box" id="chkName" />
-					<label class="label" for="chkName">&emsp;曲名&emsp;</label>
-					<label class="label" for="chkName">ジャンル</label>
+					<input id="radio1" class="radiobutton" name="hoge" type="radio" value="name" />
+					<label for="radio1">曲名</label>
+					<input id="radio2" class="radiobutton" name="hoge" type="radio" value="genre" />
+					<label for="radio2">ジャンル</label> 
 				</td>
 			</tr>
 			<tr>

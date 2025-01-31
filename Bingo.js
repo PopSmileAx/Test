@@ -95,6 +95,10 @@ function makeRandom() {
   }
 };
 
+
+
+
+
 //フォントサイズ決定処理
 function setFontSize(songName, songLength) {
   //らぶしゅがリミ対応
