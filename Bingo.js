@@ -7,6 +7,7 @@ function download() {
   html2canvas(target, options).then(function (canvas) {
     var dataURL = canvas.toDataURL();
     var link = document.createElement("a");
+
     link.href = dataURL;
     link.download = "download_" + yyyyMMddHHmmss() + ".png";
     link.click();
@@ -14,7 +15,7 @@ function download() {
 }
 
 function makeRandom() {
-  let headerText = "ポップンランダムお題ビンゴ";
+  let headerText = "ポップンお題ビンゴ";
   let makeButton = document.getElementById('makeButton');
   makeButton.disabled = true;
 
@@ -63,7 +64,7 @@ function makeRandom() {
     namesArrey = songArray.splice(rand, 1)[0].split('\t'); //TSVを分割
 
     //曲名[レベル.難易度]表示を作成
-    dispString = namesArrey[nameIndex] +"\n"+ "[" + namesArrey[2] + "," + namesArrey[3] + "]"
+    dispString = namesArrey[nameIndex] + "\n" + "[" + namesArrey[2] + "," + namesArrey[3] + "]"
     workArray.push(dispString);  //表示用配列に格納
   }
 
@@ -125,7 +126,7 @@ function setCheckedLevel() {
   //何も選択していない場合
   if (retItems.length == 0) {
     //強制的に50をやらせます
-    retItems.push("60");
+    retItems.push("50");
   }
 
   return retItems;
@@ -164,22 +165,25 @@ function countGrapheme(string) {
 }
 
 
-// クラスのインスタンス化
-const currentDate = new Date();
-// 年
-const year = currentDate.getFullYear();
-// 月
-const month = currentDate.getMonth() + 1;
-// 日
-const day = currentDate.getDate();
-// 時間
-const hour = currentDate.getHours();
-// 分
-const min = currentDate.getMinutes();
-// 秒
-const sec = currentDate.getSeconds();
+
 
 function yyyyMMddHHmmss() {
+
+  // クラスのインスタンス化
+  const currentDate = new Date();
+  // 年
+  const year = currentDate.getFullYear();
+  // 月
+  const month = currentDate.getMonth() + 1;
+  // 日
+  const day = currentDate.getDate();
+  // 時間
+  const hour = currentDate.getHours();
+  // 分
+  const min = currentDate.getMinutes();
+  // 秒
+  const sec = currentDate.getSeconds();
+  
   const date =
     year +
     String(month).padStart(2, "0") +
