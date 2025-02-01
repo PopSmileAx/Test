@@ -93,6 +93,12 @@ function makeRandom() {
 //曲ファイル決定処理
 function setFilePath(option) {
   switch (option) {
+    case "42":
+      return 'https://popsmileax.github.io/Test/Data/42Music.txt';
+    case "43":
+      return 'https://popsmileax.github.io/Test/Data/43Music.txt';
+    case "44":
+      return 'https://popsmileax.github.io/Test/Data/44Music.txt';
     case "45":
       return 'https://popsmileax.github.io/Test/Data/45Music.txt';
     case "46":
@@ -113,7 +119,7 @@ function setFilePath(option) {
 //曲レベル確認
 function setCheckedLevel() {
   let retItems = [];
-  var CHKLIST = ['chk45', 'chk46', 'chk47', 'chk48', 'chk49', 'chk50'];
+  var CHKLIST = ['chk42', 'chk43', 'chk44','chk45', 'chk46', 'chk47', 'chk48', 'chk49', 'chk50'];
 
   //チェックボックス確認
   for (var chkIndex = 0; chkIndex < CHKLIST.length; chkIndex++) {
