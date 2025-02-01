@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ポップンお題スロット</title>
+	<script src="https://popsmileax.github.io/Test/Bingo.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://popsmileax.github.io/Test/CSS/bingo.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+	<meta http-equiv="Cache-Control" content="no-store">
+</head>
+
+<body>
+	<div class="HeadArea">
+	</div>
+	<div>
+		<table id="target" class="SlotTable">
+			<tr>
+				<th id="tableHeader">ポップンお題スロット</td>
+			<tr>
+				<td class="tdRed"></td>
+			</tr>
+			<tr>
+				<td class="tdBlue"></td>
+			</tr>
+			<tr>
+				<td class="tdGreen"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="dlArea">
+		<input type="button" id="makeButton" value="スロットを止める" style="width:40%;height:30px;" onclick="makeSlot()">
+		<input type="button" id="dlButton" class="dlButton" value="ダウンロード" style="width:40%;height:30px;"
+			onclick="download()">
+	</div>
+
+	<div class="ButtonArea">
+		<h3>設定</h3>
+		<table>
+			<tr>
+				<td class="ButtonHeader">曲名／<br>ジャンル</td>
+				<td class="ButtonBody">
+					<input id="radio1" class="radiobutton" name="nameItem" type="radio" value="name" checked />
+					<label for="radio1">&emsp;曲名&emsp;</label>
+					<input id="radio2" class="radiobutton" name="nameItem" type="radio" value="genre" />
+					<label for="radio2">ジャンル</label> 
+				</td>
+			</tr>
+			<tr>
+				<td class="ButtonHeader">レベル</td>
+				<td class="ButtonBody levelCheck">
+					<input type="checkbox" class="check_box" id="chk42" value="42" /><label class="label" for="chk42">42</label>
+					<input type="checkbox" class="check_box" id="chk43" value="43" /><label class="label" for="chk43">43</label>
+					<input type="checkbox" class="check_box" id="chk44" value="44" /><label class="label" for="chk44">44</label>
+					<input type="checkbox" class="check_box" id="chk45" value="45" /><label class="label" for="chk45">45</label>
+					<input type="checkbox" class="check_box" id="chk46" value="46" /><label class="label" for="chk46">46</label>
+					<input type="checkbox" class="check_box" id="chk47" value="47" /><label class="label" for="chk47">47</label>
+					<input type="checkbox" class="check_box" id="chk48" value="48" /><label class="label" for="chk48">48</label>
+					<input type="checkbox" class="check_box" id="chk49" value="49" /><label class="label" for="chk49">49</label>
+					<input type="checkbox" class="check_box" id="chk50" value="50" /><label class="label" for="chk50">50</label>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="dlArea">
+		
+	</div>
+	<div class="AboutArea">
+		<h3>このツールについて</h3>
+		お題作成ボタンを押すと、マスの中に曲名が表示されます。<br>
+		お題はボタンを押せば何回でも作り直せます。<br>
+		ダウンロードボタンで画像をダウンロードできます。<br>
+		お題は無条件解禁に限定しています。<br>
+	</div>
+	<div class="ThankYouArea">
+		<h3>楽曲名取得先</h3>
+		<ul>
+			<li><a href="https://popn.wiki/start">ポップンミュージック上級攻略Wiki</a></li>
+		</ul>
+	</div>
+</body>
+
+</html>

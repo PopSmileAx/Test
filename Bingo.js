@@ -146,7 +146,7 @@ function setFontSize(songName, songLength) {
   if (songName.includes('かめりあ')) {
     return "60%";
   }
-  else if (songLength > 54) {
+   else if (songLength > 54) {
     return "60%";
   }
   else if (songLength > 42) {
@@ -157,7 +157,7 @@ function setFontSize(songName, songLength) {
   }
   else if (songLength > 30) {
     return "90%";
-  }
+  } 
   else {
     return "100%";
   }
@@ -199,3 +199,95 @@ function yyyyMMddHHmmss() {
     String(sec).padStart(2, "0");
   return date;
 };
+
+
+function makeSlot() {
+  let makeButton = document.getElementById('makeButton');
+  makeButton.disabled = true;
+
+  //選択されているレベルの判定
+  let selectList = setCheckedLevel();
+
+  //ファイル名取得
+  let filePath = [];
+  for (var selectIdx = 0; selectIdx < selectList.length; selectIdx++) {
+    filePath.push(setFilePath(selectList[selectIdx]));
+  }
+
+  //曲名リスト取得
+  let songArray = [];
+
+  for (var selectIdx = 0; selectIdx < filePath.length; selectIdx++) {
+    try {
+      var xhr = new XMLHttpRequest();
+
+      // 同期処理で外部ファイルを処理する
+      xhr.open("GET", filePath[selectIdx], false);
+
+      // リクエストを送る
+      xhr.send(null);
+
+      // 同期処理なのでresponseをこのタイミングで受け取れる
+      var arr = xhr.responseText.split(/\r\n|\n|\r/);
+      songArray = songArray.concat(arr);
+    }
+    // Ajax通信でエラーが起きた場合
+    catch (e) {
+    }
+
+  }
+  //曲名(配列1番目）ORジャンル名（配列0番目）
+  let radio1Box = document.getElementById('radio1');
+  let nameIndex = 1;
+  if (!radio1Box.checked) {
+    nameIndex = 0;
+  }
+
+  //曲決定
+  var workArray = [];
+  for (var i = 0, len = songArray.length; i < 3; i++, len--) {
+    rand = Math.floor(Math.random() * len); // 0～len-1の範囲の整数からランダムに値を取得
+    namesArrey = songArray.splice(rand, 1)[0].split('\t'); //TSVを分割
+
+    //曲名[レベル.難易度]表示を作成
+    dispString = namesArrey[nameIndex] + "\n" + "[" + namesArrey[2] + "," + namesArrey[3] + "]"
+    workArray.push(dispString);  //表示用配列に格納
+  }
+
+  //テーブルに曲名設定
+  let table = document.getElementById('target');
+  let cells = table.querySelectorAll('td');
+  let index = 0;
+  cells.forEach((cell) => {
+    let songName = workArray[index];
+    let songLength = countGrapheme(songName)
+
+    cell.style.fontSize = setFontSizeSlot(songName, songLength);
+    cell.style.height = "80px";
+    cell.innerText = workArray[index];
+    index++;
+  });
+
+  //作成ボタンを元に戻す
+  makeButton.disabled = false;
+};
+
+//フォントサイズ決定処理
+function setFontSizeSlot(songName, songLength) {
+  //らぶしゅがリミ対応
+  if (songName.includes('かめりあ')) {
+    return "70%";
+  }
+   else if (songLength > 54) {
+    return "70%";
+  }
+  else if (songLength > 43) {
+    return "80%";
+  }
+  else if (songLength > 35) {
+    return "90%";
+  }
+  else {
+    return "100%";
+  }
+}
