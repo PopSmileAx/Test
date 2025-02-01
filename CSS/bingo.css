@@ -81,7 +81,7 @@
 }
 .levelCheck
 {
-  line-height: 2;
+  line-height: 3;
 }
 
 .radiobutton{
@@ -90,7 +90,7 @@
 
 label{
   cursor: pointer;
-  padding: 0px 15px;
+  padding: 8px 15px;
   border: 1px solid #434343;
   border-radius: 10px;
 }
