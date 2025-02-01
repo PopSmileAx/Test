@@ -63,7 +63,7 @@ function makeRandom() {
     namesArrey = songArray.splice(rand, 1)[0].split('\t'); //TSVを分割
 
     //曲名[レベル.難易度]表示を作成
-    dispString = namesArrey[nameIndex] + "[" + namesArrey[2] + "," + namesArrey[3] + "]"
+    dispString = namesArrey[nameIndex] +"\n"+ "[" + namesArrey[2] + "," + namesArrey[3] + "]"
     workArray.push(dispString);  //表示用配列に格納
   }
 
